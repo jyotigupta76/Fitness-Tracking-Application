@@ -2,7 +2,8 @@
 
 A backend-focused fitness tracking application built using **Java and Spring Boot** that allows users to securely manage and track their fitness activities.
 
-> 🚧 **Project Status: In Progress**
+> 🚧 Status: In Development
+This project is currently under active development. New features and improvements are being added regularly.
 
 ## 📌 About the Project
 

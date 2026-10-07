@@ -21,10 +21,10 @@ public class ActivityController {
         return ResponseEntity.ok(activityService.trackActivity(request));
     }
 
-    @GetMapping("/api/activties")
-    public ResponseEntity<List<ActivityResponse>> createActivity(
-            @RequestBody ActivityResponse activityResponse){
-        return ResponseEntity.ok(activityService.createActivity(activityResponse));
-    }
+//    @GetMapping("/api/activties")
+//    public ResponseEntity<List<ActivityResponse>> createActivity(
+//            @RequestBody ActivityResponse activityResponse){
+//        return "";
+//    }
 
 }

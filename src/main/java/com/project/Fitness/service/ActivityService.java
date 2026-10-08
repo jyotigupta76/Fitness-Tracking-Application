@@ -10,7 +10,9 @@ import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -36,6 +38,7 @@ public class ActivityService {
         return mapToResponse(savedActivity);
     }
 
+
     private ActivityResponse mapToResponse(Activity activity) {
         ActivityResponse response = new  ActivityResponse();
         response.setId(activity.getId());
@@ -48,5 +51,12 @@ public class ActivityService {
         response.setCreatedAt(activity.getCreatedAt());
         response.setUpdatedAt(activity.getUpdatedAt());
         return response;
+    }
+
+    public List<ActivityResponse> getUSerActivities(String userId) {
+        List<Activity> activitiesList = activityRepository.findByUserId(userId);
+        return activitiesList.stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
     }
 }

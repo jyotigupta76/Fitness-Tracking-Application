@@ -21,10 +21,13 @@ public class ActivityController {
         return ResponseEntity.ok(activityService.trackActivity(request));
     }
 
-//    @GetMapping("/api/activties")
-//    public ResponseEntity<List<ActivityResponse>> createActivity(
-//            @RequestBody ActivityResponse activityResponse){
-//        return "";
-//    }
+    @GetMapping("/api/activities")
+    public ResponseEntity<List<ActivityResponse>> getUSerActivities(
+            @RequestHeader(value = "x-User-ID") String userId) {
+
+        return ResponseEntity.ok(
+                activityService.getUSerActivities(userId)
+        );
+    }
 
 }

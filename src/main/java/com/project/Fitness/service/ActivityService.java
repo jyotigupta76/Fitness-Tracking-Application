@@ -53,7 +53,7 @@ public class ActivityService {
         return response;
     }
 
-    public List<ActivityResponse> getUSerActivities(String userId) {
+    public List<ActivityResponse> getUserActivities(String userId) {
         List<Activity> activitiesList = activityRepository.findByUserId(userId);
         return activitiesList.stream()
                 .map(this::mapToResponse)
